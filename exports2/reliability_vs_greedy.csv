@@ -1,0 +1,4 @@
+,sampled_mean,ci_lo,ci_hi,greedy_pointest,greedy_outside_ci
+Qwen2.5-3B,0.4,0.257,0.571,0.714,True
+Falcon3-3B,0.257,0.114,0.4,0.0,True
+SmolLM2-1.7B,0.029,0.0,0.086,0.0,False

@@ -1,0 +1,10 @@
+model,axis,n,mean,ci_lo,ci_hi
+Qwen2.5-3B,Reliability: single-attempt success,35,0.4,0.257,0.571
+Qwen2.5-3B,Security: worst-attack following,6,0.5,0.167,0.833
+Qwen2.5-3B,Recovery: left over budget,6,0.667,0.333,1.0
+Falcon3-3B,Reliability: single-attempt success,35,0.257,0.114,0.4
+Falcon3-3B,Security: worst-attack following,6,0.0,0.0,0.0
+Falcon3-3B,Recovery: left over budget,6,0.0,0.0,0.0
+SmolLM2-1.7B,Reliability: single-attempt success,35,0.029,0.0,0.086
+SmolLM2-1.7B,Security: worst-attack following,6,0.0,0.0,0.0
+SmolLM2-1.7B,Recovery: left over budget,6,0.0,0.0,0.0
