@@ -1,0 +1,4 @@
+model,success_rate,over_budget_rate,wrong_trip_rate,tool_error_rate,parse_failure_rate,avg_llm_calls,avg_gen_tokens,avg_episode_time_s,tokens_per_s,avg_cost_optimality
+Qwen2.5-3B,0.381,0.524,0.048,0.0,0.01,4.762,311.19,7.941,39.186,0.772
+Falcon3-3B,0.095,0.0,0.0,0.767,0.0,2.286,301.429,4.627,65.144,
+SmolLM2-1.7B,0.0,0.0,0.0,0.739,0.202,8.0,2508.905,29.263,85.737,
