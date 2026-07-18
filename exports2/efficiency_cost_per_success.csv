@@ -1,4 +1,4 @@
 ,gen tokens / success,seconds / success
-Qwen2.5-3B,556.4,14.4
-Falcon3-3B,2017.8,36.2
-SmolLM2-1.7B,63867.0,797.8
+Qwen2.5-3B,697.5,36.9
+Falcon3-3B,7330.2,714.1
+SmolLM2-1.7B,79287.0,2607.7

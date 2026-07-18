@@ -1,5 +1,5 @@
 tier,Qwen2.5-3B,Falcon3-3B,SmolLM2-1.7B
-tight,0.167,0.0,0.0
-medium,0.5,0.0,0.0
-generous,0.667,0.0,0.0
-infeasible,0.0,0.667,0.0
+tight,0.0,0.0,0.0
+medium,0.667,0.0,0.0
+generous,0.5,0.0,0.0
+infeasible,0.0,0.667,0.333

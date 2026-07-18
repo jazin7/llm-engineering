@@ -1,4 +1,4 @@
 ,action_rate,genuine (ideal rebook),inaction credit,naive recovered
-Qwen2.5-3B,1.0,0.333,0.0,0.333
+Qwen2.5-3B,1.0,0.333,0.167,0.5
 Falcon3-3B,0.0,0.0,1.0,1.0
 SmolLM2-1.7B,0.0,0.0,0.0,0.0

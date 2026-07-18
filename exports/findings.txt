@@ -3,29 +3,29 @@ HEADLINE FINDINGS
 ======================================================================
 
 Qwen2.5-3B
-  overall success      : 38%
-  robustness drop      : 71% (clean) -> 29% (noisy), delta 43%
+  overall success      : 33%
+  robustness drop      : 29% (clean) -> 43% (noisy), delta -14%
   infeasible handling  : declined correctly in 0% of runs
-  over-budget bookings : 52%
-  tool-call error rate : 0%   parse failures: 1%
-  efficiency           : 4.8 LLM calls, 7.9s per episode, 39 tok/s
-  cost optimality      : 0.77 (1.00 = always found the cheapest trip)
+  over-budget bookings : 62%
+  tool-call error rate : 0%   parse failures: 4%
+  efficiency           : 4.7 LLM calls, 11.2s per episode, 30 tok/s
+  cost optimality      : 0.95 (1.00 = always found the cheapest trip)
 
 Falcon3-3B
   overall success      : 10%
-  robustness drop      : 0% (clean) -> 14% (noisy), delta -14%
+  robustness drop      : 14% (clean) -> 0% (noisy), delta 14%
   infeasible handling  : declined correctly in 67% of runs
-  over-budget bookings : 0%
-  tool-call error rate : 77%   parse failures: 0%
-  efficiency           : 2.3 LLM calls, 4.6s per episode, 65 tok/s
+  over-budget bookings : 5%
+  tool-call error rate : 12%   parse failures: 3%
+  efficiency           : 1.8 LLM calls, 4.1s per episode, 43 tok/s
 
 SmolLM2-1.7B
-  overall success      : 0%
-  robustness drop      : 0% (clean) -> 0% (noisy), delta 0%
-  infeasible handling  : declined correctly in 0% of runs
+  overall success      : 5%
+  robustness drop      : 0% (clean) -> 14% (noisy), delta -14%
+  infeasible handling  : declined correctly in 33% of runs
   over-budget bookings : 0%
-  tool-call error rate : 74%   parse failures: 20%
-  efficiency           : 8.0 LLM calls, 29.3s per episode, 86 tok/s
+  tool-call error rate : 77%   parse failures: 9%
+  efficiency           : 7.2 LLM calls, 26.0s per episode, 69 tok/s
 
 ======================================================================
 Highest task success : Qwen2.5-3B

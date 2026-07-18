@@ -1,4 +1,4 @@
 model,recovered,ideal_rebook,used_cancel,left_over_budget
-Qwen2.5-3B,0.333,0.333,0.0,0.667
+Qwen2.5-3B,0.5,0.333,0.167,0.333
 Falcon3-3B,1.0,0.0,0.0,0.0
 SmolLM2-1.7B,0.0,0.0,0.0,0.0

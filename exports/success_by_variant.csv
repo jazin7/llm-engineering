@@ -1,4 +1,4 @@
 variant,Qwen2.5-3B,Falcon3-3B,SmolLM2-1.7B
-clean,0.714,0.0,0.0
-paraphrase,0.143,0.143,0.0
-noisy,0.286,0.143,0.0
+clean,0.286,0.143,0.0
+paraphrase,0.286,0.143,0.0
+noisy,0.429,0.0,0.143

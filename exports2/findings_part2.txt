@@ -3,19 +3,19 @@ PART II - HEADLINE FINDINGS (beyond accuracy)
 ========================================================================
 
 A . INDIRECT PROMPT INJECTION (tool-output attack)
-  Qwen2.5-3B    worst attack: budget  followed 50%  | susceptibility(max) 33%
+  Qwen2.5-3B    worst attack: vendor  followed 33%  | susceptibility(max) 33%
   Falcon3-3B    worst attack: vendor  followed 0%  | susceptibility(max) 0%
   SmolLM2-1.7B  worst attack: vendor  followed 0%  | susceptibility(max) 0%
   -> most injectable model: Qwen2.5-3B (the more capable the agent at acting, the more there is to hijack)
 
 B . RELIABILITY (sampled, T=0.7, k up to 5)
-  Qwen2.5-3B    single 40% [95% CI 26%-57%]  reliability@5 29%
-  Falcon3-3B    single 26% [95% CI 11%-40%]  reliability@5 14%
+  Qwen2.5-3B    single 31% [95% CI 17%-46%]  reliability@5 19%
+  Falcon3-3B    single 11% [95% CI 3%-23%]  reliability@5 0%
   SmolLM2-1.7B  single 3% [95% CI 0%-9%]  reliability@5 0%
-  -> Part I greedy estimate falls OUTSIDE the sampled 95% CI for: Qwen2.5-3B, Falcon3-3B (evidence a single greedy run can mislead)
+  -> Part I greedy estimate falls OUTSIDE the sampled 95% CI for: none (evidence a single greedy run can mislead)
 
 C . RECOVERY (mid-task budget cut to 0.6x)
-  Qwen2.5-3B    recovered 33%  ideal-rebook 33%  used-cancel 0%  LEFT OVER BUDGET 67%
+  Qwen2.5-3B    recovered 50%  ideal-rebook 33%  used-cancel 17%  LEFT OVER BUDGET 33%
   Falcon3-3B    recovered 100%  ideal-rebook 0%  used-cancel 0%  LEFT OVER BUDGET 0%
   SmolLM2-1.7B  recovered 0%  ideal-rebook 0%  used-cancel 0%  LEFT OVER BUDGET 0%
 
@@ -31,15 +31,15 @@ D . DO THE LENSES AGREE WITH ACCURACY?  (Spearman rho vs accuracy rank)
      * Recovery (naive): Falcon3-3B overtakes Qwen2.5-3B (accuracy ranked Qwen2.5-3B above Falcon3-3B)
 
 E . THE INACTION TRAP  (safety scores that reward doing nothing)
-  Qwen2.5-3B    action-rate 100%  genuine-recovery 33%  inaction-credit 0%
+  Qwen2.5-3B    action-rate 100%  genuine-recovery 33%  inaction-credit 17%
   Falcon3-3B    action-rate 0%  genuine-recovery 0%  inaction-credit 100%
   SmolLM2-1.7B  action-rate 0%  genuine-recovery 0%  inaction-credit 0%
   -> high 'recovered'/'0% injection' for low-action models is inaction, not safety.
 
 F . EFFICIENCY  (generation tokens per successful booking; lower = cheaper)
-  Qwen2.5-3B    556 tok/success
-  Falcon3-3B    2,018 tok/success
-  SmolLM2-1.7B  63,867 tok/success
+  Qwen2.5-3B    698 tok/success
+  Falcon3-3B    7,330 tok/success
+  SmolLM2-1.7B  79,287 tok/success
 
 ========================================================================
 THE CLAIM IS EXISTENCE, NOT UNIVERSALITY: with three models we do not prove accuracy

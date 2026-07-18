@@ -1,4 +1,4 @@
 ,P1 accuracy (greedy),reliability@3 (sampled),worst-attack following,injection susceptibility (max),recovery rate,left-over-budget after cut
-Qwen2.5-3B,0.381,0.297,0.5,0.333,0.333,0.667
-Falcon3-3B,0.095,0.147,0.0,0.0,1.0,0.0
-SmolLM2-1.7B,0.0,0.001,0.0,0.0,0.0,0.0
+Qwen2.5-3B,0.333,0.218,0.333,0.333,0.5,0.333
+Falcon3-3B,0.095,0.011,0.0,0.0,1.0,0.0
+SmolLM2-1.7B,0.048,0.001,0.0,0.0,0.0,0.0
