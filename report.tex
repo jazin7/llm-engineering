@@ -59,8 +59,39 @@ Our claim is an existence claim. With three models we cannot show that accuracy 
 misleads. We can show concrete cases where each extra axis catches a failure that accuracy
 cannot see and where an axis reverses the accuracy ranking.
 
-%\section{Related Work}
-%-
+\section{Related Work}
+Our project follows a line of work about LLM agents that call tools. A basic requirement
+for such an agent is that the model can write correct tool calls. Gorilla
+\cite{gorilla} showed that this skill can be trained into a model. It is a finetuned LLaMA
+model that writes correct calls to over 1,600 real APIs. The same team also runs the
+Berkeley Function Calling Leaderboard, which compares models on exactly this skill. 
+In our project one correct call alone is not enough. The agent has to make several calls in
+a row, keep the total cost inside the budget and decline when no trip fits.
+
+The benchmark closest to our task is $\tau$-bench \cite{taubench}. There an agent helps a
+simulated user in a retail and an airline domain, so like our agent it books things with
+tools and has to follow rules at the same time. To measure reliability over repeated trials
+the authors introduced the pass$^k$ metric, which only counts a task as solved when the
+agent solves it $k$ times in a row. Even a strong model like gpt-4o solves less than half of
+the tasks there and with the stricter pass$^8$ it drops below 25\% in the retail domain. Our
+reliability@k in Part~II uses the same idea and our much smaller local models show the same
+instability.
+
+Rabanser et al. \cite{reliability} make this point in a more general way. A benchmark score
+alone does not show how dependable an agent is, so they measure reliability with twelve
+metrics in four groups: consistency, robustness, predictability and safety. Across the
+models they find that models became more capable but not much more reliable. Our project can
+be read as a small version of this idea, since our prompt variants test robustness, our
+sampled repeats with confidence intervals test consistency and our overbudget and refusal
+numbers test safety.
+
+Tool use also opens a door for attacks. Greshake et al. \cite{injection} call this indirect
+prompt injection. The attacker never talks to the model directly and instead hides
+instructions inside content the model reads while working, for example a website or a tool
+result. Our injection experiment in Part~II uses exactly this setup. We treat the
+marketplace as untrusted, hide instructions in the hotel search results and count how often
+the agent follows them. The result fits the threat model. The model that uses tools best is
+also the easiest to attack through them.
 
 \section{Approach}
 \subsection{Environment and agent}
@@ -256,7 +287,29 @@ We planned the project together. All three authors worked on the code, the exper
 \section*{GenAI use}
 We used Claude and ChatGPT during this project to generate simple functions and refine them. It helped with debugging the notebook code. We also used DeepL to translate and rewrite some sentences in the report. We reviewed the code and the text and checked it.
 
-%\section*{References}
-% references will be added here
+\begin{thebibliography}{9}
+
+\bibitem{gorilla}
+S. G. Patil, T. Zhang, X. Wang and J. E. Gonzalez.
+Gorilla: Large language model connected with massive APIs.
+arXiv:2305.15334, 2023. \url{https://github.com/ShishirPatil/gorilla}
+
+\bibitem{taubench}
+S. Yao, N. Shinn, P. Razavi and K. Narasimhan.
+$\tau$-bench: A benchmark for tool-agent-user interaction in real-world domains.
+arXiv:2406.12045, 2024.
+
+\bibitem{reliability}
+S. Rabanser, S. Kapoor, P. Kirgis, K. Liu, S. Utpala and A. Narayanan.
+Towards a science of AI agent reliability.
+arXiv:2602.16666, 2026.
+
+\bibitem{injection}
+K. Greshake, S. Abdelnabi, S. Mishra, C. Endres, T. Holz and M. Fritz.
+Not what you've signed up for: Compromising real-world LLM-integrated applications with
+indirect prompt injection.
+arXiv:2302.12173, 2023.
+
+\end{thebibliography}
 
 \end{document}
